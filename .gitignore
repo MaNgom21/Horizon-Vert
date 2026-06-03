@@ -1,0 +1,17 @@
+.dart_tool/
+.packages
+.pub/
+build/
+*.js_
+*.js.deps
+*.js.map
+.metadata
+*.iml
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+*.log
+local.properties
