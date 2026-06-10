@@ -12,9 +12,18 @@ Application mobile Flutter de suivi des arbres plantés dans le cadre des Journ�
 - 🎯 Filtre des arbres morts
 - 📱 Interface verte et blanche avec accents jaunes
 
-## Captures d'écran
+## Les 5 espèces réelles du Sénégal
 
-> À venir
+| Espèce | Nom latin | Lieu de plantation | Source |
+|--------|-----------|-------------------|--------|
+| Baobab | *Adansonia digitata* | Parc de Hann, Dakar | [Wikipédia](https://fr.wikipedia.org/wiki/Adansonia_digitata) |
+| Manguier | *Mangifera indica* | Niayes de Pikine | [Wikipédia](https://fr.wikipedia.org/wiki/Manguier) |
+| Fromager | *Ceiba pentandra* | Forêt classée de Mbao | [Wikipédia](https://fr.wikipedia.org/wiki/Ceiba_pentandra) |
+| Gmelina | *Gmelina arborea* | Zone ASER Rufisque | [Wikipédia](https://fr.wikipedia.org/wiki/Gmelina_arborea) |
+| Acacia | *Acacia senegal* | Ferlo, région de Louga | [Wikipédia](https://fr.wikipedia.org/wiki/Acacia_senegal) |
+
+**Source** : Direction des Parcs Nationaux du Sénégal & programmes ASER  
+**Date de collecte** : Juin 2026
 
 ## Installation
 
@@ -28,27 +37,12 @@ flutter run
 ```
 lib/
 ├── main.dart
-├── models/        # Modèle ArbrePlante
-├── screens/        # 4 écrans (Splash, Liste, Détail, Formulaire)
-├── widgets/        # Composants réutilisables
-└── services/       # Service CRUD (Singleton)
+├── data/tree_species.dart   # 5 espèces + sources
+├── models/                  # Modèle ArbrePlante
+├── screens/                 # Splash, Liste, Détail, Formulaire, À propos
+├── widgets/                 # Composants réutilisables
+└── services/                # Service CRUD (Singleton)
 ```
-
-## Espèces réelles du Sénégal
-
-| Espèce | Nom latin | Icône |
-|--------|-----------|-------|
-| Baobab | *Adansonia digitata* | 🪴 |
-| Manguier | *Mangifera indica* | 🌿 |
-| Fromager | *Ceiba pentandra* | 🌳 |
-| Gmelina | *Gmelina arborea* | 🌲 |
-| Eucalyptus | *Eucalyptus camaldulensis* | 🌱 |
-| Acacia | *Acacia senegal* | 🌾 |
-| Neem | *Azadirachta indica* | 🍃 |
-| Palmier à huile | *Elaeis guineensis* | 🌴 |
-
-**Source des données** : Direction des Parcs Nationaux du Sénégal & ASER  
-**Date de collecte** : Juin 2026
 
 ## Auteur
 

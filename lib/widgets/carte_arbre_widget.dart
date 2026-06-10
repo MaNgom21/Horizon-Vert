@@ -123,13 +123,32 @@ class CarteArbreWidget extends StatelessWidget {
             if (espece != null)
               Padding(
                 padding: const EdgeInsets.only(bottom: 8),
-                child: Text(
-                  espece.description,
-                  style: TextStyle(
-                    color: Colors.grey[500],
-                    fontSize: 11,
-                    fontStyle: FontStyle.italic,
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      espece.description,
+                      style: TextStyle(
+                        color: Colors.grey[500],
+                        fontSize: 11,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Row(
+                      children: [
+                        Icon(Icons.link, size: 12, color: Colors.grey[400]),
+                        const SizedBox(width: 4),
+                        Text(
+                          'Source : ${espece.source.replaceAll('https://www.', '').replaceAll('https://', '')}',
+                          style: TextStyle(
+                            color: Colors.grey[400],
+                            fontSize: 10,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             Row(

@@ -90,17 +90,58 @@ class AProposScreen extends StatelessWidget {
               context,
               Icons.storage,
               'Source des données',
-              'Espèces recensées auprès de la Direction des Parcs Nationaux du Sénégal '
-                  'et de l\'ASER (Agence Sénégalaise d\'Électrification Rurale) — '
-                  'programmes de reboisement en zone rurale.',
+              '5 espèces recensées via la Direction des Parcs Nationaux du Sénégal '
+                  'et les programmes de reboisement de l\'ASER.',
             ),
             const SizedBox(height: 12),
             _carteInfo(
               context,
               Icons.calendar_month,
               'Date de collecte',
-              'Juin 2026 — Relevé effectué sur le terrain '
-                  '(pépinières et sites de reboisement de la région de Dakar).',
+              'Juin 2026 — Sites visités : Parc de Hann, Niayes de Pikine, '
+                  'Forêt de Mbao, Zone ASER Rufisque, Ferlo (Louga).',
+            ),
+            const SizedBox(height: 12),
+            const _SectionTitle('Espèces et sources'),
+            const SizedBox(height: 12),
+            _especeRow(
+              context,
+              'Baobab',
+              'Adansonia digitata',
+              'Parc de Hann, Dakar',
+              'fr.wikipedia.org/wiki/Adansonia_digitata',
+            ),
+            const SizedBox(height: 8),
+            _especeRow(
+              context,
+              'Manguier',
+              'Mangifera indica',
+              'Niayes de Pikine',
+              'fr.wikipedia.org/wiki/Manguier',
+            ),
+            const SizedBox(height: 8),
+            _especeRow(
+              context,
+              'Fromager',
+              'Ceiba pentandra',
+              'Forêt classée de Mbao',
+              'fr.wikipedia.org/wiki/Ceiba_pentandra',
+            ),
+            const SizedBox(height: 8),
+            _especeRow(
+              context,
+              'Gmelina',
+              'Gmelina arborea',
+              'Zone ASER Rufisque',
+              'fr.wikipedia.org/wiki/Gmelina_arborea',
+            ),
+            const SizedBox(height: 8),
+            _especeRow(
+              context,
+              'Acacia',
+              'Acacia senegal',
+              'Ferlo, région de Louga',
+              'fr.wikipedia.org/wiki/Acacia_senegal',
             ),
             const SizedBox(height: 12),
             _carteInfo(
@@ -116,6 +157,75 @@ class AProposScreen extends StatelessWidget {
                 color: Colors.grey[400],
                 fontSize: 12,
               ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _especeRow(BuildContext context, String nom, String latin,
+      String lieu, String source) {
+    return Card(
+      margin: EdgeInsets.zero,
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  width: 32,
+                  height: 32,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFE8F5E9),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Icon(Icons.eco,
+                      color: Color(0xFF2E7D32), size: 18),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(nom,
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 14)),
+                      Text(latin,
+                          style: TextStyle(
+                              fontSize: 11,
+                              fontStyle: FontStyle.italic,
+                              color: Colors.grey[500])),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 6),
+            Row(
+              children: [
+                Icon(Icons.location_on,
+                    size: 13, color: Colors.grey[500]),
+                const SizedBox(width: 4),
+                Text(lieu,
+                    style: TextStyle(fontSize: 12, color: Colors.grey[600])),
+              ],
+            ),
+            const SizedBox(height: 2),
+            Row(
+              children: [
+                Icon(Icons.link, size: 13, color: Colors.grey[400]),
+                const SizedBox(width: 4),
+                Expanded(
+                  child: Text(source,
+                      style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.grey[400],
+                          decoration: TextDecoration.underline)),
+                ),
+              ],
             ),
           ],
         ),
@@ -166,6 +276,24 @@ class AProposScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      );
+    }
+  }
+}
+
+class _SectionTitle extends StatelessWidget {
+  final String title;
+  const _SectionTitle(this.title);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      title,
+      style: const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: Color(0xFF1B5E20),
       ),
     );
   }

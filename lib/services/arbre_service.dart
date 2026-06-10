@@ -14,7 +14,6 @@ class ArbreService {
   void initialiserDonnees() {
     if (_arbres.isNotEmpty) return;
     final uuid = const Uuid();
-    final maintenant = DateTime.now();
     _arbres.addAll([
       ArbrePlante(
         id: uuid.v4(),
@@ -27,7 +26,7 @@ class ArbreService {
       ArbrePlante(
         id: uuid.v4(),
         espece: 'Manguier',
-        site: 'Pépinière de Guédiawaye',
+        site: 'Niayes de Pikine',
         datePlantation: DateTime(2024, 8, 20),
         planteur: 'Mamadou Diallo',
         vivant: true,
@@ -43,7 +42,7 @@ class ArbreService {
       ArbrePlante(
         id: uuid.v4(),
         espece: 'Gmelina',
-        site: 'Zone de reboisement de Rufisque',
+        site: 'Zone ASER Rufisque',
         datePlantation: DateTime(2025, 1, 12),
         planteur: 'Ousmane Sène',
         vivant: false,
@@ -51,34 +50,10 @@ class ArbreService {
       ArbrePlante(
         id: uuid.v4(),
         espece: 'Acacia',
-        site: 'Niayes de Pikine',
+        site: 'Ferlo, région de Louga',
         datePlantation: DateTime(2024, 10, 3),
         planteur: 'Fatou Diop',
         vivant: true,
-      ),
-      ArbrePlante(
-        id: uuid.v4(),
-        espece: 'Eucalyptus',
-        site: 'Pépinière de Guédiawaye',
-        datePlantation: DateTime(2023, 11, 18),
-        planteur: 'Adji Mariama',
-        vivant: true,
-      ),
-      ArbrePlante(
-        id: uuid.v4(),
-        espece: 'Neem',
-        site: 'Parc de Hann, Dakar',
-        datePlantation: DateTime(2025, 9, 8),
-        planteur: 'Mamadou Diallo',
-        vivant: true,
-      ),
-      ArbrePlante(
-        id: uuid.v4(),
-        espece: 'Baobab',
-        site: 'Sangalkam',
-        datePlantation: DateTime(2024, 12, 25),
-        planteur: 'Ibrahima Fall',
-        vivant: false,
       ),
     ]);
     _notifier();
