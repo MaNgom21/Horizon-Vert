@@ -88,6 +88,23 @@ class AProposScreen extends StatelessWidget {
             const SizedBox(height: 12),
             _carteInfo(
               context,
+              Icons.storage,
+              'Source des données',
+              'Espèces recensées auprès de la Direction des Parcs Nationaux du Sénégal '
+                  'et de l\'ASER (Agence Sénégalaise d\'Électrification Rurale) — '
+                  'programmes de reboisement en zone rurale.',
+            ),
+            const SizedBox(height: 12),
+            _carteInfo(
+              context,
+              Icons.calendar_month,
+              'Date de collecte',
+              'Juin 2026 — Relevé effectué sur le terrain '
+                  '(pépinières et sites de reboisement de la région de Dakar).',
+            ),
+            const SizedBox(height: 12),
+            _carteInfo(
+              context,
               Icons.info_outline,
               'Version',
               '1.0.0 — Juin 2026',
