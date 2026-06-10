@@ -5,6 +5,7 @@ import '../widgets/statistiques_widget.dart';
 import '../widgets/carte_arbre_widget.dart';
 import 'detail_site_screen.dart';
 import 'formulaire_arbre_screen.dart';
+import 'a_propos_screen.dart';
 
 class ListeArbresScreen extends StatefulWidget {
   const ListeArbresScreen({super.key});
@@ -99,6 +100,18 @@ class _ListeArbresScreenState extends State<ListeArbresScreen> {
       appBar: AppBar(
         title: const Text('Horizon Vert'),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            tooltip: 'À propos',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const AProposScreen(),
+                ),
+              );
+            },
+          ),
           IconButton(
             icon: _afficherMortsSeulement
                 ? const Icon(Icons.filter_list_off)
