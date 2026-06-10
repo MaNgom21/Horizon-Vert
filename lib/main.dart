@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'screens/splash_screen.dart';
+import 'services/arbre_service.dart';
 
 void main() {
+  ArbreService.instance.initialiserDonnees();
   runApp(const ReboisementApp());
 }
 

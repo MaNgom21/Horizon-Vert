@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../models/arbre_plante.dart';
+import '../data/tree_species.dart';
 
 class CarteArbreWidget extends StatelessWidget {
   final ArbrePlante arbre;
@@ -18,6 +19,10 @@ class CarteArbreWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final espece = trouverEspece(arbre.espece);
+    final couleurEspece = espece?.couleur ?? const Color(0xFF2E7D32);
+    final iconeEspece = espece?.icone ?? Icons.eco;
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -30,14 +35,19 @@ class CarteArbreWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: arbre.vivant
-                        ? const Color(0xFFE8F5E9)
+                        ? couleurEspece.withOpacity(0.15)
                         : const Color(0xFFFFEBEE),
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                      color: arbre.vivant
+                          ? couleurEspece.withOpacity(0.3)
+                          : const Color(0xFFE53935).withOpacity(0.3),
+                    ),
                   ),
                   child: Icon(
-                    arbre.vivant ? Icons.eco : Icons.eco_outlined,
+                    iconeEspece,
                     color: arbre.vivant
-                        ? const Color(0xFF43A047)
+                        ? couleurEspece
                         : const Color(0xFFE53935),
                     size: 28,
                   ),
@@ -52,6 +62,15 @@ class CarteArbreWidget extends StatelessWidget {
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                       const SizedBox(height: 2),
+                      if (espece != null)
+                        Text(
+                          espece.nomLatin,
+                          style: TextStyle(
+                            color: couleurEspece.withOpacity(0.7),
+                            fontSize: 12,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
                       Text(
                         'Planté par ${arbre.planteur}',
                         style: Theme.of(context).textTheme.bodyMedium,
@@ -101,6 +120,18 @@ class CarteArbreWidget extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 10),
+            if (espece != null)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Text(
+                  espece.description,
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                    fontSize: 11,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

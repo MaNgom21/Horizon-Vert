@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:uuid/uuid.dart';
 import '../models/arbre_plante.dart';
 
 class ArbreService {
@@ -9,6 +10,79 @@ class ArbreService {
   final List<ArbrePlante> _arbres = [];
   final ValueNotifier<List<ArbrePlante>> arbresNotifier =
       ValueNotifier<List<ArbrePlante>>([]);
+
+  void initialiserDonnees() {
+    if (_arbres.isNotEmpty) return;
+    final uuid = const Uuid();
+    final maintenant = DateTime.now();
+    _arbres.addAll([
+      ArbrePlante(
+        id: uuid.v4(),
+        espece: 'Baobab',
+        site: 'Parc de Hann, Dakar',
+        datePlantation: DateTime(2024, 7, 15),
+        planteur: 'Adji Mariama',
+        vivant: true,
+      ),
+      ArbrePlante(
+        id: uuid.v4(),
+        espece: 'Manguier',
+        site: 'Pépinière de Guédiawaye',
+        datePlantation: DateTime(2024, 8, 20),
+        planteur: 'Mamadou Diallo',
+        vivant: true,
+      ),
+      ArbrePlante(
+        id: uuid.v4(),
+        espece: 'Fromager',
+        site: 'Forêt classée de Mbao',
+        datePlantation: DateTime(2024, 6, 5),
+        planteur: 'Aïssatou Ndiaye',
+        vivant: true,
+      ),
+      ArbrePlante(
+        id: uuid.v4(),
+        espece: 'Gmelina',
+        site: 'Zone de reboisement de Rufisque',
+        datePlantation: DateTime(2025, 1, 12),
+        planteur: 'Ousmane Sène',
+        vivant: false,
+      ),
+      ArbrePlante(
+        id: uuid.v4(),
+        espece: 'Acacia',
+        site: 'Niayes de Pikine',
+        datePlantation: DateTime(2024, 10, 3),
+        planteur: 'Fatou Diop',
+        vivant: true,
+      ),
+      ArbrePlante(
+        id: uuid.v4(),
+        espece: 'Eucalyptus',
+        site: 'Pépinière de Guédiawaye',
+        datePlantation: DateTime(2023, 11, 18),
+        planteur: 'Adji Mariama',
+        vivant: true,
+      ),
+      ArbrePlante(
+        id: uuid.v4(),
+        espece: 'Neem',
+        site: 'Parc de Hann, Dakar',
+        datePlantation: DateTime(2025, 9, 8),
+        planteur: 'Mamadou Diallo',
+        vivant: true,
+      ),
+      ArbrePlante(
+        id: uuid.v4(),
+        espece: 'Baobab',
+        site: 'Sangalkam',
+        datePlantation: DateTime(2024, 12, 25),
+        planteur: 'Ibrahima Fall',
+        vivant: false,
+      ),
+    ]);
+    _notifier();
+  }
 
   List<ArbrePlante> get tousLesArbres => List.unmodifiable(_arbres);
 

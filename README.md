@@ -34,14 +34,21 @@ lib/
 └── services/       # Service CRUD (Singleton)
 ```
 
-## Données réelles
+## Espèces réelles du Sénégal
 
-Espèces d'arbres plantés au Sénégal :
-- Manguier
-- Baobab
-- Fromager
-- Gmelina
-- Eucalyptus
+| Espèce | Nom latin | Icône |
+|--------|-----------|-------|
+| Baobab | *Adansonia digitata* | 🪴 |
+| Manguier | *Mangifera indica* | 🌿 |
+| Fromager | *Ceiba pentandra* | 🌳 |
+| Gmelina | *Gmelina arborea* | 🌲 |
+| Eucalyptus | *Eucalyptus camaldulensis* | 🌱 |
+| Acacia | *Acacia senegal* | 🌾 |
+| Neem | *Azadirachta indica* | 🍃 |
+| Palmier à huile | *Elaeis guineensis* | 🌴 |
+
+**Source des données** : Direction des Parcs Nationaux du Sénégal & ASER  
+**Date de collecte** : Juin 2026
 
 ## Auteur
 
